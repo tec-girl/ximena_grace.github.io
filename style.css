@@ -1,0 +1,87 @@
+/* ===== XIMENA GRACE — lujo en negro, dorado y plateado ===== */
+:root{
+  --black:#050505;
+  --panel:#0d0d10;
+  --gold1:#f6e7bd;
+  --gold2:#caa25e;
+  --gold3:#7d5f27;
+  --silver:#dfe3ea;
+  --text:#ece7db;
+  --dim:#a79f8f;
+  --line:rgba(202,162,94,.35);
+  --gold-grad:linear-gradient(100deg,#8a6a2f 0%,#caa25e 25%,#f6e7bd 50%,#caa25e 75%,#8a6a2f 100%);
+  --display:'Playfair Display',serif;
+  --sans:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.65}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(60rem 30rem at 50% -10%,rgba(202,162,94,.13),transparent 60%),
+             radial-gradient(40rem 24rem at 85% 110%,rgba(223,227,234,.06),transparent 60%)}
+a{color:var(--gold2)}
+
+/* ===== NAV ===== */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:.7rem 1.4rem;background:rgba(5,5,5,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--silver);
+  font-family:var(--display);font-weight:700;letter-spacing:.28em;font-size:1rem}
+.brand img{width:2.6rem;height:auto;display:block}
+.brand em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+.menu a{color:var(--text);text-decoration:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.menu a:hover{color:var(--gold1)}
+.menu .cta{border:1px solid var(--gold2);padding:.45rem 1rem;color:var(--gold1)}
+.menu .cta:hover{background:var(--gold-grad);color:#191104;border-color:transparent}
+.lang-switch{display:inline-flex;gap:.3rem}
+.lang-switch button{background:transparent;border:1px solid rgba(223,227,234,.35);color:var(--silver);
+  font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.08em;padding:.32rem .5rem;cursor:pointer;transition:.2s}
+.lang-switch button:hover{border-color:var(--gold2);color:var(--gold1)}
+.lang-switch button.active{background:var(--gold-grad);border-color:transparent;color:#191104}
+
+/* ===== HERO ===== */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:8rem 1.4rem 4rem;position:relative}
+.hero-logo{width:min(26rem,82vw);height:auto;filter:drop-shadow(0 0 34px rgba(202,162,94,.25))}
+.hero-tag{margin-top:1.6rem;font-size:.82rem;letter-spacing:.42em;text-transform:uppercase;color:var(--silver)}
+.hero-sub{margin-top:.9rem;max-width:36rem;color:var(--dim);font-size:1.05rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+.hero-note{margin-top:2.2rem;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.btn{display:inline-block;text-decoration:none;letter-spacing:.2em;text-transform:uppercase;font-size:.76rem;
+  font-weight:500;padding:.85rem 1.7rem;transition:.25s}
+.btn-gold{background:var(--gold-grad);color:#191104}
+.btn-gold:hover{filter:brightness(1.1)}
+.btn-line{border:1px solid var(--gold2);color:var(--gold1)}
+.btn-line:hover{background:rgba(202,162,94,.12)}
+
+/* ===== SECCIONES ===== */
+.seccion{max-width:56rem;margin:0 auto;padding:4.5rem 1.4rem 1rem;text-align:center}
+.sec-kicker{color:var(--gold2);font-size:.78rem;letter-spacing:.4em}
+.sec-title{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,5.5vw,2.8rem);margin:.5rem 0 .4rem;
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-sub{color:var(--dim);max-width:34rem;margin:0 auto 2rem}
+.price-card{background:var(--panel);border:1px solid var(--line);padding:2.2rem 2.4rem;text-align:left;
+  box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.price-row{display:flex;align-items:baseline;gap:.7rem;padding:.55rem 0;font-size:1.02rem}
+.price-row .dots{flex:1;border-bottom:1px dotted rgba(202,162,94,.5);transform:translateY(-.25rem)}
+.price{font-family:var(--display);font-weight:700;color:var(--gold1);white-space:nowrap}
+
+/* ===== CONTACTO ===== */
+.contact-card{background:var(--panel);border:1px solid var(--line);padding:2.6rem 2rem;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.contact-icon{width:9rem;height:auto;margin-bottom:1rem}
+.contact-lead{color:var(--dim)}
+.contact-phone{font-family:var(--display);font-size:clamp(1.5rem,5vw,2.2rem);font-weight:700;color:var(--silver);
+  letter-spacing:.06em;margin:.4rem 0 .6rem}
+.contact-note{margin-top:1.6rem;font-size:.85rem;color:var(--dim);max-width:32rem;margin-left:auto;margin-right:auto}
+
+/* ===== FOOTER ===== */
+.footer{text-align:center;padding:3.4rem 1.4rem 2.4rem;color:var(--dim);border-top:1px solid var(--line);margin-top:3rem}
+.footer-brand{font-family:var(--display);font-weight:700;letter-spacing:.3em;font-size:1.15rem;color:var(--silver);margin-bottom:.4rem}
+.footer-brand em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer .small{margin-top:.7rem;font-size:.78rem}
+.footer .credit a{color:var(--gold2)}
+
+@media (max-width:760px){
+  .price-card{padding:1.6rem 1.2rem}
+  .brand span{display:none}
+}
