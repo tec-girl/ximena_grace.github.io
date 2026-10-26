@@ -27,6 +27,7 @@ var PHONE_WA = "5212212481754";
       "price.from300": "from $300", "price.from800": "from $800", "price.from1200": "from $1,200", "price.from1500": "from $1,500",
       "contact.title": "Contact",
       "social.title": "Follow her on social media",
+      "mq.text": "XIMENA LASHES ✦ LASHES ✦ PROFESSIONAL MAKEUP ✦ HAIR ✦ COLOR ✦ LUXURY IN EVERY DETAIL ✦ ",
       "contact.lead": "Book your appointment by phone or WhatsApp:",
       "contact.phone": "Phone to be confirmed",
       "contact.wa": "Book via WhatsApp", "contact.call": "Call now",
@@ -54,6 +55,7 @@ var PHONE_WA = "5212212481754";
       "price.from300": "dès $300", "price.from800": "dès $800", "price.from1200": "dès $1,200", "price.from1500": "dès $1,500",
       "contact.title": "Contact",
       "social.title": "Suivez-la sur les réseaux sociaux",
+      "mq.text": "XIMENA LASHES ✦ CILS ✦ MAQUILLAGE PROFESSIONNEL ✦ COIFFURE ✦ COULEUR ✦ LE LUXE DANS CHAQUE DÉTAIL ✦ ",
       "contact.lead": "Réservez votre rendez-vous par téléphone ou WhatsApp :",
       "contact.phone": "Téléphone à confirmer",
       "contact.wa": "Réserver via WhatsApp", "contact.call": "Appeler maintenant",
@@ -81,6 +83,7 @@ var PHONE_WA = "5212212481754";
       "price.from300": "ab $300", "price.from800": "ab $800", "price.from1200": "ab $1,200", "price.from1500": "ab $1,500",
       "contact.title": "Kontakt",
       "social.title": "Folge ihr in den sozialen Medien",
+      "mq.text": "XIMENA LASHES ✦ WIMPERN ✦ PROFESSIONELLES MAKE-UP ✦ FRISUR ✦ FARBE ✦ LUXUS IN JEDEM DETAIL ✦ ",
       "contact.lead": "Buche deinen Termin per Telefon oder WhatsApp:",
       "contact.phone": "Telefon wird noch bestätigt",
       "contact.wa": "Per WhatsApp buchen", "contact.call": "Jetzt anrufen",
@@ -108,6 +111,7 @@ var PHONE_WA = "5212212481754";
       "price.from300": "desde $300", "price.from800": "desde $800", "price.from1200": "desde $1,200", "price.from1500": "desde $1,500",
       "contact.title": "Contato",
       "social.title": "Siga-a nas redes sociais",
+      "mq.text": "XIMENA LASHES ✦ CÍLIOS ✦ MAQUIAGEM PROFISSIONAL ✦ PENTEADO ✦ COR ✦ LUXO EM CADA DETALHE ✦ ",
       "contact.lead": "Agende seu horário por telefone ou WhatsApp:",
       "contact.phone": "Telefone a confirmar",
       "contact.wa": "Agendar pelo WhatsApp", "contact.call": "Ligar agora",
@@ -135,6 +139,7 @@ var PHONE_WA = "5212212481754";
       "price.from300": "$300 起", "price.from800": "$800 起", "price.from1200": "$1,200 起", "price.from1500": "$1,500 起",
       "contact.title": "联系方式",
       "social.title": "在社交媒体关注她",
+      "mq.text": "XIMENA LASHES ✦ 美睫 ✦ 专业化妆 ✦ 发型 ✦ 染发 ✦ 奢华在于每个细节 ✦ ",
       "contact.lead": "通过电话或 WhatsApp 预约：",
       "contact.phone": "电话待确认",
       "contact.wa": "通过 WhatsApp 预约", "contact.call": "立即拨打",
@@ -182,4 +187,47 @@ var PHONE_WA = "5212212481754";
   var saved = null;
   try { saved = localStorage.getItem('tecgirl-lang'); } catch (e) {}
   if (saved && saved !== 'es') applyLang(saved); else applyPhone();
+})();
+
+// ===== EFECTOS: destellos, aparición al hacer scroll y brillo del cursor =====
+(function () {
+  // Destellos dorados flotando en el hero
+  var hero = document.querySelector('.hero');
+  if (hero) {
+    for (var i = 0; i < 26; i++) {
+      var s = document.createElement('span');
+      s.className = 'sparkle';
+      var size = 3 + Math.random() * 6;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left = (Math.random() * 96) + '%';
+      s.style.top = (Math.random() * 92) + '%';
+      s.style.animationDuration = (2.2 + Math.random() * 3.4) + 's';
+      s.style.animationDelay = (Math.random() * 3) + 's';
+      hero.appendChild(s);
+    }
+    // Brillo suave que sigue al cursor
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      hero.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  }
+  // Aparición elegante al hacer scroll
+  var targets = document.querySelectorAll('.seccion > *, .price-row, .marquee');
+  targets.forEach(function (el) { el.classList.add('reveal'); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en, idx) {
+        if (en.isIntersecting) {
+          var el = en.target;
+          setTimeout(function () { el.classList.add('visible'); }, (idx % 6) * 70);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('visible'); });
+  }
 })();
