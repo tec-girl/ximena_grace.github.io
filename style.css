@@ -127,3 +127,6 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ===== A DOMICILIO ===== */
+.contact-home{margin-top:.9rem;color:#e9cf8f;letter-spacing:.05em;font-size:.98rem}
