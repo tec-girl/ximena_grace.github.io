@@ -2,8 +2,8 @@
 // === CONFIGURACIÓN DE CONTACTO: al tener el teléfono real, ponerlo aquí ===
 // PHONE_DISPLAY: tal como se muestra (ej. "+52 222 000 0000")
 // PHONE_WA: solo dígitos con código de país (ej. "522220000000")
-var PHONE_DISPLAY = "";
-var PHONE_WA = "";
+var PHONE_DISPLAY = "+52 1 221 248 1754";
+var PHONE_WA = "5212212481754";
 
 (function () {
   var I18N = {
