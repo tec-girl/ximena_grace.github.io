@@ -72,6 +72,11 @@ a{color:var(--gold2)}
 .contact-lead{color:var(--dim)}
 .contact-phone{font-family:var(--display);font-size:clamp(1.5rem,5vw,2.2rem);font-weight:700;color:var(--silver);
   letter-spacing:.06em;margin:.4rem 0 .6rem}
+.social-title{margin-top:2rem;font-size:.78rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold2)}
+.social-links{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem}
+.social-links a{border:1px solid var(--line);padding:.55rem 1.1rem;text-decoration:none;color:var(--silver);
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;transition:.2s}
+.social-links a:hover{background:var(--gold-grad);color:#191104;border-color:transparent}
 .contact-note{margin-top:1.6rem;font-size:.85rem;color:var(--dim);max-width:32rem;margin-left:auto;margin-right:auto}
 
 /* ===== FOOTER ===== */
