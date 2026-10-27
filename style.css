@@ -130,3 +130,13 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 /* ===== A DOMICILIO ===== */
 .contact-home{margin-top:.9rem;color:#e9cf8f;letter-spacing:.05em;font-size:.98rem}
+
+/* Cursor: pestaña con la X de Ximena */
+body{cursor:url('assets/cursor-lash-x.png') 33 8, auto}
+a, button, .lang-switch button{cursor:url('assets/cursor-lash-x.png') 33 8, pointer}
+
+/* Color restaurado — no disponible por el momento */
+.color-head{margin:1.4rem 0 .4rem;text-align:center;letter-spacing:.3em;font-size:.78rem;font-weight:700;color:#caa25e;text-transform:uppercase}
+.price-row.unavailable{opacity:.55}
+.price-row.unavailable span:first-child{text-decoration:line-through;text-decoration-thickness:1px}
+.na-badge{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#caa25e;border:1px solid #caa25e;padding:.22rem .6rem;border-radius:999px;white-space:nowrap}
